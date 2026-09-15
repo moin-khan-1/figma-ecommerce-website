@@ -1133,3 +1133,1414 @@ body {
     height: 200px;
   }
 }
+
+/* =========================================================
+   SHOP.CO - FIGMA HOME PAGE
+========================================================= */
+
+.home {
+  width: 100%;
+  overflow: hidden;
+  color: #000;
+  background: #fff;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  height: 102px;
+  padding: 0 78px;
+  background: #fff;
+  border-bottom: none;
+}
+
+.logo {
+  font-size: 38px;
+  font-weight: 900;
+  color: #4b168f;
+  letter-spacing: -2px;
+  text-decoration: underline;
+}
+
+.navbar-left {
+  gap: 70px;
+}
+
+.nav-links {
+  gap: 42px;
+}
+
+.nav-links a {
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+}
+
+.navbar-right {
+  gap: 22px;
+}
+
+.search-box {
+  width: 390px;
+  height: 56px;
+  border-radius: 30px;
+  background: #f2f2f2;
+  padding: 0 22px;
+}
+
+.search-box input {
+  font-size: 17px;
+}
+
+.icon-button {
+  font-size: 25px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 722px;
+  height: 722px;
+  display: grid;
+  grid-template-columns: 54% 46%;
+  padding: 0 5%;
+  background: #f2f0f1;
+  overflow: hidden;
+}
+
+.hero-content {
+  padding: 55px 0 35px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-content h1 {
+  max-width: 760px;
+  font-size: clamp(55px, 4.7vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  font-weight: 900;
+  color: #000;
+}
+
+.hero-content>p {
+  max-width: 720px;
+  margin: 32px 0 30px;
+  color: #555;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.shop-button {
+  width: 245px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 35px;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.shop-button:hover {
+  background: #4b168f;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  height: 722px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+  display: flex;
+  align-items: flex-start;
+  gap: 55px;
+  margin-top: 48px;
+}
+
+.stat {
+  min-width: 135px;
+}
+
+.stat h3 {
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat span {
+  display: block;
+  color: #555;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   BRANDS
+========================================================= */
+
+.brands {
+  min-height: 115px;
+  padding: 0 7%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brands h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.brands h2:last-child {
+  font-size: 28px;
+}
+
+
+/* =========================================================
+   PRODUCT SECTIONS
+========================================================= */
+
+.products-section {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 90px 55px 55px;
+}
+
+.products-section>h2 {
+  text-align: center;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 50px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.product-image {
+  width: 100%;
+  height: 330px;
+  border-radius: 18px;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.product-card p {
+  margin-top: 8px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.view-button {
+  display: flex;
+  width: 220px;
+  height: 54px;
+  margin: 45px auto 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.view-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+/* =========================================================
+   DRESS STYLE
+========================================================= */
+
+.dress-style {
+  width: calc(100% - 100px);
+  max-width: 1350px;
+  margin: 70px auto;
+  padding: 70px 80px;
+  background: #f0f0f0;
+  border-radius: 30px;
+}
+
+.dress-style h2 {
+  text-align: center;
+  margin: 0 0 45px;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  grid-template-rows: 210px 210px;
+  gap: 20px;
+}
+
+.style-card {
+  position: relative;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.style-card:nth-child(2) {
+  grid-row: span 1;
+}
+
+.style-card:nth-child(3) {
+  grid-column: span 1;
+}
+
+.style-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.style-card span {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews-section {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 70px 55px 100px;
+}
+
+.reviews-section>h2 {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 45px;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.review-card {
+  min-height: 190px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.review-card::before {
+  display: none;
+}
+
+.stars {
+  margin-bottom: 16px;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.review-card h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.review-card p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 0 35px;
+  }
+
+  .navbar-left {
+    gap: 35px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .search-box {
+    width: 260px;
+  }
+
+  .hero {
+    grid-template-columns: 55% 45%;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .hero-content>p {
+    font-size: 16px;
+  }
+
+  .stats {
+    gap: 25px;
+  }
+
+  .stat h3 {
+    font-size: 28px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dress-style {
+    padding: 50px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: 72px;
+    padding: 0 18px;
+  }
+
+  .navbar-left {
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 23px;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 12px;
+  }
+
+  .icon-button {
+    font-size: 21px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 45px 20px 0;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    line-height: 0.98;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-content>p {
+    margin: 22px 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .shop-button {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .stats {
+    width: 100%;
+    margin-top: 35px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .stat {
+    min-width: auto;
+  }
+
+  .stat h3 {
+    font-size: 23px;
+  }
+
+  .stat span {
+    font-size: 11px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 390px;
+    margin-top: 20px;
+  }
+
+
+  /* BRANDS */
+
+  .brands {
+    min-height: 90px;
+    padding: 20px;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brands h2 {
+    font-size: 17px;
+  }
+
+  .brands h2:last-child {
+    font-size: 16px;
+  }
+
+
+  /* PRODUCTS */
+
+  .products-section {
+    padding: 55px 20px 25px;
+  }
+
+  .products-section>h2 {
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .product-image {
+    height: 190px;
+    border-radius: 14px;
+  }
+
+  .product-card h3 {
+    font-size: 14px;
+  }
+
+  .product-card p {
+    font-size: 17px;
+  }
+
+  .view-button {
+    width: 100%;
+    height: 52px;
+    margin-top: 30px;
+  }
+
+
+  /* DRESS STYLE */
+
+  .dress-style {
+    width: calc(100% - 40px);
+    margin: 45px 20px;
+    padding: 35px 18px;
+    border-radius: 22px;
+  }
+
+  .dress-style h2 {
+    font-size: 27px;
+    margin-bottom: 25px;
+  }
+
+  .style-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 180px);
+    gap: 14px;
+  }
+
+  .style-card {
+    height: 180px;
+  }
+
+  .style-card span {
+    top: 18px;
+    left: 20px;
+    font-size: 24px;
+  }
+
+
+  /* REVIEWS */
+
+  .reviews-section {
+    padding: 45px 20px 70px;
+  }
+
+  .reviews-section>h2 {
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .review-card {
+    min-height: auto;
+    padding: 25px;
+  }
+}
+
+/* =========================================================
+   SHOP.CO FIGMA HOME PAGE
+   ========================================================= */
+
+.home-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.shop-navbar {
+  width: 100%;
+  height: 96px !important;
+  background: #ffffff !important;
+  border-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+.shop-navbar-inner {
+  width: min(1240px, calc(100% - 80px));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.shop-logo {
+  text-decoration: none;
+  color: #5b168c;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
+}
+
+.shop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+}
+
+.shop-nav-links a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.shop-nav-links a:hover {
+  opacity: 0.55;
+}
+
+.shop-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.shop-search {
+  width: 350px;
+  height: 44px;
+  border-radius: 24px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  padding: 0 17px;
+  color: #666666;
+}
+
+.shop-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #111111;
+}
+
+.shop-search input::placeholder {
+  color: #777777;
+}
+
+.shop-nav-icon {
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.shop-nav-icon:hover {
+  transform: translateY(-1px);
+}
+
+.shop-mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-hero {
+  min-height: 620px;
+  width: 100%;
+  background: #f2f0f1;
+  display: grid;
+  grid-template-columns: 52% 48%;
+  overflow: hidden;
+}
+
+.home-hero-content {
+  max-width: 720px;
+  width: 100%;
+  padding: 70px 30px 55px max(40px, calc((100vw - 1240px) / 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-hero-content h1 {
+  margin: 0;
+  max-width: 690px;
+  font-size: clamp(46px, 4.5vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  font-weight: 950;
+  color: #050505;
+}
+
+.home-hero-content>p {
+  margin: 28px 0 0;
+  max-width: 570px;
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.home-shop-btn {
+  width: 190px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 28px;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.home-shop-btn:hover {
+  background: #292929;
+  transform: translateY(-1px);
+}
+
+.home-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 45px;
+}
+
+.home-stat {
+  min-width: 145px;
+  padding-right: 28px;
+  margin-right: 28px;
+  border-right: 1px solid #c8c8c8;
+}
+
+.home-stat:last-child {
+  border-right: none;
+  margin-right: 0;
+}
+
+.home-stat strong {
+  display: block;
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 800;
+  color: #000000;
+}
+
+.home-stat span {
+  display: block;
+  margin-top: 8px;
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.home-hero-image {
+  height: 620px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+
+/* =========================================================
+   BRANDS
+   ========================================================= */
+
+.home-brands {
+  width: 100%;
+  min-height: 125px;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 max(40px, calc((100vw - 1240px) / 2));
+}
+
+.home-brands span {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.brand-versace {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.brand-zara {
+  font-family: Arial, sans-serif;
+  font-size: 31px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand-gucci {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.brand-prada {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.brand-calvin {
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PRODUCT SECTIONS
+   ========================================================= */
+
+.home-products-section {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 75px 0 55px;
+}
+
+.home-products-section h2 {
+  margin: 0 0 45px;
+  text-align: center;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #000000;
+}
+
+.home-products-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+
+/* ProductCard generated classes */
+
+.home-page .product-card {
+  width: 100%;
+  display: block;
+  color: #111111;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.home-page .product-card:hover {
+  transform: translateY(-3px);
+}
+
+.home-page .product-image {
+  width: 100%;
+  height: 310px;
+  background: #f0f0f0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.home-page .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.home-page .product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+.home-page .product-card h3 {
+  margin: 15px 0 0;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #111111;
+}
+
+.home-page .product-card p {
+  margin: 9px 0 0;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  color: #111111;
+}
+
+.home-view-all {
+  width: 180px;
+  height: 48px;
+  margin: 40px auto 0;
+  border: 1px solid #dddddd;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.home-view-all:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.home-top-selling {
+  padding-top: 70px;
+}
+
+
+/* =========================================================
+   DRESS STYLE
+   ========================================================= */
+
+.home-dress-style {
+  width: min(1200px, calc(100% - 80px));
+  margin: 35px auto 80px;
+  padding: 55px 55px 60px;
+  border-radius: 28px;
+  background: #f0f0f0;
+}
+
+.home-dress-style h2 {
+  margin: 0 0 40px;
+  text-align: center;
+  font-size: 39px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+}
+
+.home-style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  grid-template-rows: 190px 190px;
+  gap: 18px;
+}
+
+.home-style-card {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.home-style-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.home-style-card:hover img {
+  transform: scale(1.02);
+}
+
+.home-style-casual {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.home-style-formal {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.home-style-party {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.home-style-gym {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+
+.home-reviews {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 10px 0 85px;
+}
+
+.home-reviews h2 {
+  margin: 0 0 45px;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.home-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.home-review-card {
+  min-height: 220px;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 28px;
+  background: #ffffff;
+}
+
+.review-stars {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 23px;
+}
+
+.home-review-card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.home-review-card p {
+  margin-top: 17px;
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .shop-navbar-inner {
+    width: calc(100% - 40px);
+    gap: 25px;
+  }
+
+  .shop-nav-links {
+    gap: 18px;
+  }
+
+  .shop-search {
+    width: 230px;
+  }
+
+  .home-hero {
+    grid-template-columns: 52% 48%;
+  }
+
+  .home-hero-content {
+    padding-left: 40px;
+  }
+
+  .home-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .home-products-section {
+    width: calc(100% - 50px);
+  }
+
+  .home-products-grid {
+    gap: 18px;
+  }
+
+  .home-page .product-image {
+    height: 250px;
+  }
+
+  .home-dress-style {
+    width: calc(100% - 50px);
+    padding: 45px 35px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .shop-navbar {
+    height: 70px !important;
+  }
+
+  .shop-navbar-inner {
+    width: calc(100% - 30px);
+    gap: 14px;
+  }
+
+  .shop-mobile-menu {
+    display: block;
+    border: none;
+    background: transparent;
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .shop-logo {
+    font-size: 23px;
+  }
+
+  .shop-nav-links {
+    display: none;
+  }
+
+  .shop-navbar-right {
+    margin-left: auto;
+    gap: 12px;
+  }
+
+  .shop-search {
+    display: none;
+  }
+
+  .shop-nav-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  .home-hero {
+    display: block;
+    min-height: auto;
+  }
+
+  .home-hero-content {
+    max-width: none;
+    padding: 55px 20px 35px;
+  }
+
+  .home-hero-content h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+    line-height: 0.98;
+  }
+
+  .home-hero-content>p {
+    font-size: 14px;
+    margin-top: 22px;
+  }
+
+  .home-shop-btn {
+    width: 100%;
+    height: 50px;
+  }
+
+  .home-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 15px;
+    margin-top: 38px;
+  }
+
+  .home-stat {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border-right: none;
+  }
+
+  .home-stat strong {
+    font-size: 25px;
+  }
+
+  .home-stat span {
+    font-size: 12px;
+  }
+
+  .home-hero-image {
+    height: 390px;
+  }
+
+  .home-brands {
+    min-height: 150px;
+    padding: 28px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 25px 15px;
+  }
+
+  .brand-versace,
+  .brand-zara,
+  .brand-gucci,
+  .brand-prada,
+  .brand-calvin {
+    font-size: 19px;
+  }
+
+  .home-products-section {
+    width: calc(100% - 30px);
+    padding: 55px 0 35px;
+  }
+
+  .home-products-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .home-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 12px;
+  }
+
+  .home-page .product-image {
+    height: 190px;
+    border-radius: 14px;
+  }
+
+  .home-page .product-card h3 {
+    font-size: 14px;
+    margin-top: 11px;
+  }
+
+  .home-page .product-card p {
+    font-size: 17px;
+  }
+
+  .home-view-all {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .home-dress-style {
+    width: calc(100% - 30px);
+    margin: 35px auto 55px;
+    padding: 35px 18px;
+    border-radius: 22px;
+  }
+
+  .home-dress-style h2 {
+    font-size: 29px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+  }
+
+  .home-style-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 160px);
+    gap: 13px;
+  }
+
+  .home-style-casual,
+  .home-style-formal,
+  .home-style-party,
+  .home-style-gym {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .home-reviews {
+    width: calc(100% - 30px);
+    padding-bottom: 55px;
+  }
+
+  .home-reviews h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .home-review-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .home-review-card {
+    min-height: auto;
+    padding: 23px;
+  }
+}
