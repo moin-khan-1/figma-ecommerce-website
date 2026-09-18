@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function Cart() {
     const {
@@ -27,7 +28,7 @@ function Cart() {
                             <div className="cart-item" key={item.id}>
                                 <div className="cart-item-image">
                                     <img
-                                        src={`http://localhost:5000${item.image}`}
+                                        src={`${API_URL}${item.image}`}
                                         alt={item.name}
                                     />
                                 </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { useSearchParams } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function Shop() {
     const [products, setProducts] = useState([]);
@@ -17,7 +18,7 @@ function Shop() {
     }, [urlSearch]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/products")
+        fetch(`${API_URL}/api/products`)
             .then((response) => response.json())
             .then((data) => setProducts(data))
             .catch((error) => console.log(error));

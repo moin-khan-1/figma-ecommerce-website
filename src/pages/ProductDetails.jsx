@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function ProductDetails() {
     const { id } = useParams();
@@ -11,7 +12,7 @@ function ProductDetails() {
     const [selectedSize, setSelectedSize] = useState("");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/products/${id}`)
+        fetch(`${API_URL}/api/products/${id}`)
             .then((response) => response.json())
             .then((data) => setProduct(data))
             .catch((error) => console.log(error));
@@ -39,7 +40,7 @@ function ProductDetails() {
         <main className="product-details">
             <div className="product-details-image">
                 <img
-                    src={`http://localhost:5000${product.image}`}
+                    src={`${API_URL}${product.image}`}
                     alt={product.name}
                 />
             </div>
