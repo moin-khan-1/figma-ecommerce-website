@@ -98,7 +98,15 @@ function Home() {
             {/* HERO */}
             <section className="home-hero">
                 <div className="home-hero-content">
-                    <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+
+                    <h1>
+                        FIND CLOTHES
+                        <br />
+                        THAT MATCHES
+                        <br />
+                        YOUR STYLE
+                    </h1>
+
 
                     <p>
                         Browse through our diverse range of meticulously crafted garments,
@@ -161,6 +169,8 @@ function Home() {
             </section>
 
             {/* DRESS STYLE */}
+
+
             <section className="home-dress-style">
                 <h2>BROWSE BY DRESS STYLE</h2>
 
@@ -172,6 +182,10 @@ function Home() {
                                 className={`home-style-card home-style-${style.key}`}
                             >
                                 <img src={style.image} alt={style.label} />
+
+                                <h3 className="home-style-label">
+                                    {style.key === "casual" ? "Casual" : "Formal"}
+                                </h3>
                             </div>
                         ))}
                     </div>
@@ -183,6 +197,10 @@ function Home() {
                                 className={`home-style-card home-style-${style.key}`}
                             >
                                 <img src={style.image} alt={style.label} />
+
+                                <h3 className="home-style-label">
+                                    {style.key === "party" ? "Party" : "Gym"}
+                                </h3>
                             </div>
                         ))}
                     </div>

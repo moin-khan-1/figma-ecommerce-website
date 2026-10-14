@@ -684,3 +684,198 @@
         font-size: 36px;
     }
 }
+
+
+/* ===================================
+   ADMIN DARK MODE FIX
+=================================== */
+
+body.dark-mode .admin-layout {
+    background: #111 !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .admin-main {
+    background: #111 !important;
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .admin-topbar {
+    background: #1c1c1c !important;
+    color: #f5f5f5 !important;
+    border-color: #383838 !important;
+}
+
+body.dark-mode .admin-store-link {
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .admin-page-heading h1,
+body.dark-mode .admin-page-heading p,
+body.dark-mode .admin-dashboard h1,
+body.dark-mode .admin-dashboard h2,
+body.dark-mode .admin-dashboard h3,
+body.dark-mode .admin-dashboard p,
+body.dark-mode .admin-dashboard span,
+body.dark-mode .admin-dashboard strong {
+    color: #f5f5f5;
+}
+
+body.dark-mode .admin-stat-card,
+body.dark-mode .admin-panel,
+body.dark-mode .admin-form-panel,
+body.dark-mode .admin-message-card {
+    background: #202020 !important;
+    color: #f5f5f5 !important;
+    border-color: #383838 !important;
+}
+
+body.dark-mode .admin-stat-card span,
+body.dark-mode .admin-panel-header p,
+body.dark-mode .admin-quick-grid span,
+body.dark-mode .admin-message-card>p,
+body.dark-mode .admin-message-card>small,
+body.dark-mode .admin-message-card a,
+body.dark-mode .admin-empty,
+body.dark-mode .admin-loading,
+body.dark-mode .admin-table-subtext {
+    color: #c0c0c0 !important;
+}
+
+body.dark-mode .admin-table th {
+    background: #292929 !important;
+    color: #f5f5f5 !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .admin-table td {
+    background: #202020 !important;
+    color: #f5f5f5 !important;
+    border-color: #383838 !important;
+}
+
+body.dark-mode .admin-quick-grid button,
+body.dark-mode .admin-small-btn,
+body.dark-mode .admin-outline-btn {
+    background: #292929 !important;
+    color: #f5f5f5 !important;
+    border-color: #484848 !important;
+}
+
+body.dark-mode .admin-quick-grid button:hover,
+body.dark-mode .admin-outline-btn:hover {
+    border-color: #aaa !important;
+}
+
+body.dark-mode .admin-form-grid label {
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .admin-form-grid input,
+body.dark-mode .admin-form-grid select,
+body.dark-mode .admin-message-card select {
+    background: #292929 !important;
+    color: #f5f5f5 !important;
+    border-color: #484848 !important;
+}
+
+body.dark-mode .admin-form-grid input::placeholder {
+    color: #bdbdbd !important;
+}
+
+body.dark-mode .admin-message {
+    background: #202020 !important;
+    color: #f5f5f5 !important;
+    border-color: #444 !important;
+}
+
+/* Admin login page */
+
+body.dark-mode .admin-login-page {
+    background: #111 !important;
+}
+
+body.dark-mode .admin-login-card {
+    background: #202020 !important;
+    color: #f5f5f5 !important;
+    border-color: #383838 !important;
+}
+
+body.dark-mode .admin-login-card h1,
+body.dark-mode .admin-login-card label,
+body.dark-mode .admin-login-logo {
+    color: #f5f5f5 !important;
+}
+
+body.dark-mode .admin-login-subtitle,
+body.dark-mode .admin-back-store {
+    color: #c0c0c0 !important;
+}
+
+body.dark-mode .admin-login-card input {
+    background: #292929 !important;
+    color: #f5f5f5 !important;
+    border-color: #484848 !important;
+}
+
+body.dark-mode .admin-login-card input::placeholder {
+    color: #bdbdbd !important;
+}
+
+body.dark-mode .admin-login-card .admin-eyebrow {
+    color: #bdbdbd !important;
+}
+
+
+/* Admin theme toggle */
+.admin-topbar {
+    gap: 16px;
+}
+
+.admin-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.admin-theme-toggle {
+    border: 1px solid #777;
+    border-radius: 24px;
+    padding: 9px 15px;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+body.dark-mode .admin-theme-toggle {
+    background: #292929;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-mode .admin-status.status-pending {
+    background: #fff1d6 !important;
+    color: #8a5700 !important;
+}
+
+body.dark-mode .admin-status.status-cancelled {
+    background: #ffe5e5 !important;
+    color: #a32222 !important;
+}
+
+body.dark-mode .admin-status.status-processing {
+    background: #e8efff !important;
+    color: #315db7 !important;
+}
+
+body.dark-mode .admin-status.status-shipped {
+    background: #eee5ff !important;
+    color: #7042ad !important;
+}
+
+body.dark-mode .admin-status.status-delivered {
+    background: #e3f7e8 !important;
+    color: #25723b !important;
+}

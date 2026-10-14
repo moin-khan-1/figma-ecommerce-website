@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -9,6 +10,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import MyOrders from "./pages/MyOrders";
 
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
@@ -24,26 +26,57 @@ function App() {
       {!isAdminPage && <Navbar />}
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        <Route
+          path="/shop"
+          element={<Shop />}
+        />
+
         <Route
           path="/product/:id"
           element={<ProductDetails />}
         />
-        <Route path="/cart" element={<Cart />} />
+
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
         <Route
           path="/checkout"
           element={<Checkout />}
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
 
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/signup"
+          element={<Signup />}
+        />
+
+        {/* CUSTOMER ORDERS */}
+        <Route
+          path="/orders"
+          element={<MyOrders />}
+        />
+
+        {/* ADMIN */}
         <Route
           path="/admin/login"
           element={<AdminLogin />}
         />
 
-        <Route path="/admin" element={<Admin />} />
+        <Route
+          path="/admin"
+          element={<Admin />}
+        />
       </Routes>
 
       {!isAdminPage && <Footer />}

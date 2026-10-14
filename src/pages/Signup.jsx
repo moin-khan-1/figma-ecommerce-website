@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL =
+    import.meta.env.VITE_API_URL ||
+    "http://localhost:5000";
 
 function Signup() {
     const navigate = useNavigate();
@@ -12,6 +15,10 @@ function Signup() {
     });
 
     const [message, setMessage] = useState("");
+    const [showPassword, setShowPassword] =
+        useState(false);
+
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         setForm({
@@ -23,36 +30,60 @@ function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setMessage("");
+        setLoading(true);
+
         try {
-            const response = await fetch(`${API_URL}/api/auth/signup`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(form),
-            }
+            const response = await fetch(
+                `${API_URL}/api/auth/signup`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+                    },
+                    body: JSON.stringify(form),
+                }
             );
 
-            const data = await response.json();
+            const data =
+                await response.json();
 
             if (!response.ok) {
-                setMessage(data.message);
+                setMessage(
+                    data.message ||
+                    "Signup failed"
+                );
                 return;
             }
 
-            setMessage("Signup successful!");
+            setMessage(
+                "Signup successful!"
+            );
 
             setTimeout(() => {
                 navigate("/login");
             }, 1000);
         } catch (error) {
-            setMessage("Server connection failed");
+            console.error(
+                "Signup error:",
+                error
+            );
+
+            setMessage(
+                "Server connection failed"
+            );
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <main className="auth-page">
-            <form className="auth-form" onSubmit={handleSubmit}>
+            <form
+                className="auth-form"
+                onSubmit={handleSubmit}
+            >
                 <h1>Create Account</h1>
 
                 <input
@@ -73,26 +104,109 @@ function Signup() {
                     required
                 />
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={form.password}
-                    onChange={handleChange}
-                    required
-                />
+                {/* PASSWORD FIELD */}
+                <div
+                    style={{
+                        position: "relative",
+                        width: "100%",
+                    }}
+                >
+                    <input
+                        type={
+                            showPassword
+                                ? "text"
+                                : "password"
+                        }
+                        name="password"
+                        placeholder="Password"
+                        value={form.password}
+                        onChange={handleChange}
+                        required
+                        style={{
+                            width: "100%",
+                            boxSizing:
+                                "border-box",
+                            paddingRight:
+                                "55px",
+                        }}
+                    />
 
-                <button type="submit">
-                    Sign Up
+                    <button
+                        type="button"
+                        onClick={() =>
+                            setShowPassword(
+                                !showPassword
+                            )
+                        }
+                        aria-label={
+                            showPassword
+                                ? "Hide password"
+                                : "Show password"
+                        }
+                        style={{
+                            position:
+                                "absolute",
+                            right: "10px",
+                            top: "50%",
+                            transform:
+                                "translateY(-50%)",
+                            width: "40px",
+                            minWidth: "40px",
+                            height: "40px",
+                            padding: "0",
+                            margin: "0",
+                            border: "none",
+                            outline: "none",
+                            background:
+                                "transparent",
+                            boxShadow: "none",
+                            color: "#111",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems:
+                                "center",
+                            justifyContent:
+                                "center",
+                            fontSize: "18px",
+                            zIndex: 10,
+                        }}
+                    >
+                        {showPassword
+                            ? "🙈"
+                            : "👁️"}
+                    </button>
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={loading}
+                >
+                    {loading
+                        ? "Creating Account..."
+                        : "Sign Up"}
                 </button>
 
-                {message && <p>{message}</p>}
+                {message && (
+                    <p
+                        style={{
+                            color: message.includes(
+                                "successful"
+                            )
+                                ? "green"
+                                : "crimson",
+                        }}
+                    >
+                        {message}
+                    </p>
+                )}
 
                 <p>
                     Already have an account?{" "}
                     <span
                         className="auth-link"
-                        onClick={() => navigate("/login")}
+                        onClick={() =>
+                            navigate("/login")
+                        }
                     >
                         Login
                     </span>

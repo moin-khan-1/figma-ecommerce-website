@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL =
+    import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function AdminLogin() {
     const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const [showPassword, setShowPassword] =
+        useState(false);
+
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -23,7 +28,8 @@ function AdminLogin() {
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json",
+                        "Content-Type":
+                            "application/json",
                     },
                     body: JSON.stringify({
                         email,
@@ -35,7 +41,10 @@ function AdminLogin() {
             const data = await response.json();
 
             if (!response.ok) {
-                setError(data.message || "Admin login failed");
+                setError(
+                    data.message ||
+                    "Admin login failed"
+                );
                 return;
             }
 
@@ -46,8 +55,14 @@ function AdminLogin() {
 
             navigate("/admin");
         } catch (error) {
-            console.error(error);
-            setError("Unable to connect to server");
+            console.error(
+                "Admin login error:",
+                error
+            );
+
+            setError(
+                "Unable to connect to server"
+            );
         } finally {
             setLoading(false);
         }
@@ -76,20 +91,92 @@ function AdminLogin() {
                     <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) =>
+                            setEmail(
+                                e.target.value
+                            )
+                        }
                         placeholder="Admin email"
                         required
                     />
 
                     <label>Password</label>
 
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Admin password"
-                        required
-                    />
+                    {/* PASSWORD FIELD */}
+                    <div
+                        style={{
+                            position: "relative",
+                            width: "100%",
+                        }}
+                    >
+                        <input
+                            type={
+                                showPassword
+                                    ? "text"
+                                    : "password"
+                            }
+                            value={password}
+                            onChange={(e) =>
+                                setPassword(
+                                    e.target.value
+                                )
+                            }
+                            placeholder="Admin password"
+                            required
+                            style={{
+                                width: "100%",
+                                boxSizing:
+                                    "border-box",
+                                paddingRight:
+                                    "55px",
+                            }}
+                        />
+
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setShowPassword(
+                                    !showPassword
+                                )
+                            }
+                            aria-label={
+                                showPassword
+                                    ? "Hide password"
+                                    : "Show password"
+                            }
+                            style={{
+                                position:
+                                    "absolute",
+                                right: "10px",
+                                top: "50%",
+                                transform:
+                                    "translateY(-50%)",
+                                width: "40px",
+                                minWidth: "40px",
+                                height: "40px",
+                                padding: "0",
+                                margin: "0",
+                                border: "none",
+                                outline: "none",
+                                background:
+                                    "transparent",
+                                boxShadow: "none",
+                                color: "#111",
+                                cursor: "pointer",
+                                display: "flex",
+                                alignItems:
+                                    "center",
+                                justifyContent:
+                                    "center",
+                                fontSize: "18px",
+                                zIndex: 10,
+                            }}
+                        >
+                            {showPassword
+                                ? "🙈"
+                                : "👁️"}
+                        </button>
+                    </div>
 
                     {error && (
                         <p className="admin-login-error">
@@ -102,13 +189,18 @@ function AdminLogin() {
                         className="admin-black-btn admin-login-btn"
                         disabled={loading}
                     >
-                        {loading ? "Signing in..." : "Admin Login"}
+                        {loading
+                            ? "Signing in..."
+                            : "Admin Login"}
                     </button>
                 </form>
 
                 <button
+                    type="button"
                     className="admin-back-store"
-                    onClick={() => navigate("/")}
+                    onClick={() =>
+                        navigate("/")
+                    }
                 >
                     ← Back to Store
                 </button>

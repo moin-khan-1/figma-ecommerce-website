@@ -1,24 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+const API_URL =
+    import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function Checkout() {
     const { cart, clearCart } = useCart();
     const navigate = useNavigate();
 
+    const savedUser = (() => {
+        try {
+            const user = localStorage.getItem("user");
+            return user ? JSON.parse(user) : null;
+        } catch {
+            return null;
+        }
+    })();
+
     const [form, setForm] = useState({
-        name: "",
-        email: "",
+        name: savedUser?.name || "",
+        email: savedUser?.email || "",
         address: "",
         city: "",
         phone: "",
     });
 
     const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const total = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity,
+        (sum, item) =>
+            sum + item.price * item.quantity,
         0
     );
 
@@ -37,15 +50,37 @@ function Checkout() {
             return;
         }
 
+        const currentUser = (() => {
+            try {
+                const user = localStorage.getItem("user");
+                return user ? JSON.parse(user) : null;
+            } catch {
+                return null;
+            }
+        })();
+
+        if (!currentUser) {
+            setMessage("Please login before placing an order.");
+            return;
+        }
+
+        setLoading(true);
+        setMessage("");
+
         try {
-            const response = await fetch(`${API_URL}/api/orders`,
+            const response = await fetch(
+                `${API_URL}/api/orders`,
                 {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        customer: form,
+                        customer: {
+                            ...form,
+                            name: currentUser.name,
+                            email: currentUser.email,
+                        },
                         items: cart,
                         total,
                     }),
@@ -55,18 +90,33 @@ function Checkout() {
             const data = await response.json();
 
             if (!response.ok) {
-                setMessage(data.message);
+                setMessage(
+                    data.message ||
+                    "Could not place order."
+                );
                 return;
             }
+
             clearCart();
 
-            setMessage("Order placed successfully!");
+            setMessage(
+                "Order placed successfully!"
+            );
 
             setTimeout(() => {
-                navigate("/");
-            }, 1500);
+                navigate("/orders");
+            }, 1000);
         } catch (error) {
-            setMessage("Server connection failed");
+            console.error(
+                "Checkout error:",
+                error
+            );
+
+            setMessage(
+                "Server connection failed"
+            );
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -96,6 +146,7 @@ function Checkout() {
                         placeholder="Email Address"
                         value={form.email}
                         onChange={handleChange}
+                        readOnly
                         required
                     />
 
@@ -125,11 +176,18 @@ function Checkout() {
                         required
                     />
 
-                    <button type="submit">
-                        Place Order
+                    <button
+                        type="submit"
+                        disabled={loading}
+                    >
+                        {loading
+                            ? "Placing Order..."
+                            : "Place Order"}
                     </button>
 
-                    {message && <p>{message}</p>}
+                    {message && (
+                        <p>{message}</p>
+                    )}
                 </form>
 
                 <div className="checkout-summary">
@@ -141,18 +199,23 @@ function Checkout() {
                             key={`${item.id}-${item.size || ""}`}
                         >
                             <span>
-                                {item.name} × {item.quantity}
+                                {item.name} ×{" "}
+                                {item.quantity}
                             </span>
 
                             <span>
-                                ${item.price * item.quantity}
+                                $
+                                {item.price *
+                                    item.quantity}
                             </span>
                         </div>
                     ))}
 
                     <hr />
 
-                    <h2>Total: ${total}</h2>
+                    <h2>
+                        Total: ${total}
+                    </h2>
                 </div>
             </div>
         </main>
