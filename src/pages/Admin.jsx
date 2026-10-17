@@ -109,7 +109,7 @@ function Admin() {
                 <div className="admin-page-heading">
                     <div>
                         <p className="admin-eyebrow">
-                            SHOP.CO ADMIN
+                            SHOPPING.CO ADMIN
                         </p>
 
                         <h1>Dashboard</h1>
@@ -310,7 +310,7 @@ function Admin() {
     return (
         <main className="admin-layout">
             <aside className="admin-sidebar">
-                <div className="admin-logo">SHOP.CO</div>
+                <div className="admin-logo">SHOPPING.CO</div>
 
                 <div className="admin-user-box">
                     <span>ADMIN</span>

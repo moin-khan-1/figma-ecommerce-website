@@ -212,11 +212,14 @@ function Navbar() {
                 </button>
 
                 {/* LOGO */}
-                <Link
-                    to="/"
-                    className="shop-logo"
-                >
-                    SHOP.CO
+
+                <Link to="/" className="shop-logo">
+                    <img
+                        src="/shopping-avatar.png"
+                        alt="SHOPPING.CO Logo"
+                        className="shop-logo-avatar"
+                    />
+                    <span>SHOPPING.CO</span>
                 </Link>
 
                 {/* NAV LINKS */}
@@ -485,7 +488,7 @@ function Navbar() {
                                                     "10px",
                                             }}
                                         >
-                                            Welcome to SHOP.CO
+                                            Welcome to SHOPPING.CO
                                         </div>
 
                                         {/* LOGIN */}

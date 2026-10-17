@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const API_URL =
     import.meta.env.VITE_API_URL || "http://localhost:5000";
 
@@ -72,7 +73,7 @@ function AdminLogin() {
         <main className="admin-login-page">
             <div className="admin-login-card">
                 <div className="admin-login-logo">
-                    SHOP.CO
+                    SHOPPING.CO
                 </div>
 
                 <p className="admin-eyebrow">

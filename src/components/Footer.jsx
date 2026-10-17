@@ -1,3 +1,10 @@
+import {
+    FaFacebookF,
+    FaInstagram,
+    FaXTwitter,
+    FaYoutube,
+} from "react-icons/fa6";
+
 function Footer() {
     return (
         <footer className="footer">
@@ -31,7 +38,7 @@ function Footer() {
 
                 <div className="footer-brand">
 
-                    <h2>SHOP.CO</h2>
+                    <h2>SHOPPING.CO</h2>
 
                     <p>
                         We have clothes that suits your style and which you're proud
@@ -39,7 +46,21 @@ function Footer() {
                     </p>
 
                     <div className="footer-socials">
-                        ●　●　●　●
+                        <a href="https://facebook.com/" aria-label="Facebook">
+                            <FaFacebookF />
+                        </a>
+
+                        <a href="https://instagram.com/" aria-label="Instagram">
+                            <FaInstagram />
+                        </a>
+
+                        <a href="https://x.com/" aria-label="X">
+                            <FaXTwitter />
+                        </a>
+
+                        <a href="https://youtube.com/" aria-label="YouTube">
+                            <FaYoutube />
+                        </a>
                     </div>
 
                 </div>
@@ -83,7 +104,7 @@ function Footer() {
             <div className="footer-bottom">
 
                 <p>
-                    © 2026 SHOP.CO. All Rights Reserved.
+                    © 2026 SHOPPING.CO. All Rights Reserved.
                 </p>
 
             </div>

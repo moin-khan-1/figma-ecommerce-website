@@ -2665,3 +2665,72 @@ body:not(.dark-mode) .checkout-form input {
   color: #111111;
   border-color: #e0e0e0;
 }
+
+.shop-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.shop-logo-avatar {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #000;
+  background: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* SHOPPING.CO logo visibility in dark mode */
+body.dark-mode .shop-logo {
+  color: #ffffff;
+}
+
+body.dark-mode .shop-logo-avatar {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+/* Footer social icons in dark mode */
+body.dark-mode .footer-socials a {
+  color: #ffffff;
+  background: #222222;
+  border-color: #555555;
+}
+
+body.dark-mode .footer-socials a:hover {
+  color: #000000;
+  background: #ffffff;
+  border-color: #ffffff;
+}
