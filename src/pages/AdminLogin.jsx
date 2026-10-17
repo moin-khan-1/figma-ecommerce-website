@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Eye, EyeOff } from "lucide-react";
 
 const API_URL =
     import.meta.env.VITE_API_URL || "http://localhost:5000";
@@ -104,12 +104,9 @@ function AdminLogin() {
                     <label>Password</label>
 
                     {/* PASSWORD FIELD */}
-                    <div
-                        style={{
-                            position: "relative",
-                            width: "100%",
-                        }}
-                    >
+
+                    <div className="admin-password-wrapper">
+
                         <input
                             type={
                                 showPassword
@@ -146,36 +143,31 @@ function AdminLogin() {
                                     : "Show password"
                             }
                             style={{
-                                position:
-                                    "absolute",
+                                position: "absolute",
                                 right: "10px",
                                 top: "50%",
-                                transform:
-                                    "translateY(-50%)",
-                                width: "40px",
-                                minWidth: "40px",
-                                height: "40px",
-                                padding: "0",
-                                margin: "0",
+                                transform: "translateY(-50%)",
+                                width: "36px",
+                                height: "36px",
+                                minWidth: "36px",
+                                padding: 0,
+                                margin: 0,
                                 border: "none",
-                                outline: "none",
-                                background:
-                                    "transparent",
-                                boxShadow: "none",
-                                color: "#111",
+                                borderRadius: "8px",
+                                background: "transparent",
+                                color: "#777",
                                 cursor: "pointer",
                                 display: "flex",
-                                alignItems:
-                                    "center",
-                                justifyContent:
-                                    "center",
-                                fontSize: "18px",
-                                zIndex: 10,
+                                alignItems: "center",
+                                justifyContent: "center",
+                                zIndex: 2,
                             }}
                         >
-                            {showPassword
-                                ? "🙈"
-                                : "👁️"}
+                            {showPassword ? (
+                                <EyeOff size={19} strokeWidth={1.8} />
+                            ) : (
+                                <Eye size={19} strokeWidth={1.8} />
+                            )}
                         </button>
                     </div>
 

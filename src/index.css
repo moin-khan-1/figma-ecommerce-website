@@ -8,12 +8,17 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  overflow-x: clip;
 }
 
 body {
+  min-height: 100%;
   font-family: "Inter", Arial, sans-serif;
   color: #000;
   background: #fff;
+  overflow-x: clip;
+  overflow-y: auto;
 }
 
 a {
@@ -38,6 +43,7 @@ img {
 
 #root {
   min-height: 100vh;
+  overflow: visible;
 }
 
 .shop-navbar {
@@ -768,11 +774,6 @@ img {
   color: #666;
 }
 
-/* .shop-content {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 35px;
-} */
 .shop-content {
   margin-top: -15px;
   display: grid;
@@ -1194,11 +1195,15 @@ img {
 
 .auth-page {
   min-height: calc(100vh - 102px);
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 24px;
+  padding: 40px 24px 80px;
+  box-sizing: border-box;
   background: #f5f5f5;
+  position: relative;
+  isolation: isolate;
 }
 
 .auth-form {
@@ -1944,7 +1949,6 @@ img {
   }
 }
 
-/* MY ORDERS - SMALL MOBILE  */
 @media (max-width: 430px) {
   .my-orders-page {
     padding-left: 12px;
@@ -2051,9 +2055,7 @@ body.dark-mode .theme-toggle:hover {
   }
 }
 
-/* ================================
-   SHOP.CO DARK MODE
-================================ */
+/* SHOP.CO DARK MODE */
 body.dark-mode {
   background-color: #111111 !important;
   color: #f5f5f5 !important;
@@ -2082,6 +2084,7 @@ body.dark-mode .my-orders-page {
   color: #f5f5f5;
 }
 
+
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -2093,6 +2096,37 @@ body.dark-mode .home-hero p,
 body.dark-mode .home-section-title {
   color: #f5f5f5;
 }
+
+/* Keep customer login and signup cards white */
+body.dark-mode .auth-page {
+  background: #111111 !important;
+}
+
+body.dark-mode .auth-form,
+body.dark-mode .auth-form h1,
+body.dark-mode .auth-form h2,
+body.dark-mode .auth-form p,
+body.dark-mode .auth-form label,
+body.dark-mode .auth-form .auth-link {
+  background-color: #ffffff;
+  color: #111111 !important;
+}
+
+body.dark-mode .auth-form input {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border-color: #dddddd !important;
+}
+
+body.dark-mode .auth-form input::placeholder {
+  color: #777777 !important;
+}
+
+body.dark-mode .auth-form button[type="submit"] {
+  background-color: #000000;
+  color: #ffffff !important;
+}
+
 
 body.dark-mode .shop-navbar {
   background-color: #111111 !important;
@@ -2185,7 +2219,6 @@ body.dark-mode .theme-toggle {
   cursor: pointer;
 }
 
-/* DARK MODE: FIX TEXT VISIBILITY */
 body.dark-mode .home-style-card h2,
 body.dark-mode .home-style-card h3,
 body.dark-mode .home-style-card .home-style-label {
@@ -2231,9 +2264,7 @@ body.dark-mode .shop-navbar input::placeholder {
   color: #bdbdbd !important;
 }
 
-/* ===================================
-   MY ORDERS DARK MODE
-=================================== */
+/* MY ORDERS DARK MODE */
 body.dark-mode .my-orders-page {
   background: #111 !important;
   color: #f5f5f5 !important;
@@ -2283,7 +2314,6 @@ body.dark-mode .my-orders-page .my-orders-empty p {
   color: #f5f5f5 !important;
 }
 
-/* Keep status badges readable */
 body.dark-mode .my-orders-page .status-pending {
   background: #fff1d6 !important;
   color: #8a5700 !important;
@@ -2309,7 +2339,6 @@ body.dark-mode .my-orders-page .status-delivered {
   color: #25723b !important;
 }
 
-/* Navbar profile dropdown */
 body.dark-mode .shop-navbar [style*="position: absolute"] {
   background: #202020 !important;
   color: #f5f5f5 !important;
@@ -2352,10 +2381,7 @@ body.dark-mode .my-orders-page .order-status.status-delivered {
   color: #25723b !important;
 }
 
-/* =================================
-   CHECKOUT LIGHT & DARK MODE FIX
-================================= */
-/* Checkout theme variables */
+/* CHECKOUT LIGHT & DARK MODE FIX */
 .checkout-page {
   --checkout-card-bg: #ffffff;
   --checkout-text: #111111;
@@ -2364,7 +2390,6 @@ body.dark-mode .my-orders-page .order-status.status-delivered {
   color: var(--checkout-text);
 }
 
-/* Dark theme */
 body.dark-mode .checkout-page {
   --checkout-card-bg: #1f1f1f;
   --checkout-text: #f5f5f5;
@@ -2372,21 +2397,18 @@ body.dark-mode .checkout-page {
   --checkout-border: #3b3b3b;
 }
 
-/* Delivery form card */
 .checkout-page .checkout-form {
   background: var(--checkout-card-bg) !important;
   color: var(--checkout-text) !important;
   border: 1px solid var(--checkout-border);
 }
 
-/* Order summary card */
 .checkout-page .checkout-summary {
   background: var(--checkout-card-bg) !important;
   color: var(--checkout-text) !important;
   border: 1px solid var(--checkout-border);
 }
 
-/* All form fields have the same appearance */
 .checkout-page .checkout-form input,
 .checkout-page .checkout-form textarea,
 .checkout-page .checkout-form select {
@@ -2396,20 +2418,17 @@ body.dark-mode .checkout-page {
   color-scheme: light;
 }
 
-/* Keep placeholder text readable */
 .checkout-page .checkout-form input::placeholder {
   color: #777777;
   opacity: 1;
 }
 
-/* Read-only email field */
 .checkout-page .checkout-form input:read-only {
   background: var(--checkout-input-bg) !important;
   color: var(--checkout-text) !important;
   opacity: 1;
 }
 
-/* Summary headings and product details */
 .checkout-page .checkout-summary h2,
 .checkout-page .checkout-summary p,
 .checkout-page .checkout-summary span,
@@ -2417,21 +2436,18 @@ body.dark-mode .checkout-page {
   color: var(--checkout-text) !important;
 }
 
-/* Summary divider */
 .checkout-page .checkout-summary hr {
   border: 0;
   border-top: 1px solid var(--checkout-border);
 }
 
-/* Summary item separators */
 .checkout-page .checkout-summary .summary-item {
   color: var(--checkout-text) !important;
   border-color: var(--checkout-border);
 }
 
-/* ==========================================
-   SHOP.CO CART - FINAL DESIGN FIX
-========================================== */
+/* SHOP.CO CART - FINAL DESIGN FIX */
+
 .cart-page .cart-items {
   display: flex;
   flex-direction: column;
@@ -2479,7 +2495,6 @@ body.dark-mode .checkout-page {
   margin: 0 0 16px;
 }
 
-/* Quantity control */
 .cart-page .quantity {
   display: inline-flex;
   align-items: center;
@@ -2522,7 +2537,6 @@ body.dark-mode .checkout-page {
   opacity: 1;
 }
 
-/* Remove button */
 .cart-page .remove-button {
   flex: 0 0 auto;
   margin-left: auto;
@@ -2541,7 +2555,6 @@ body.dark-mode .checkout-page {
   color: #ffffff;
 }
 
-/* Cart total box */
 .cart-page .cart-summary {
   width: min(100%, 490px);
   margin: 36px 0 0 auto;
@@ -2555,7 +2568,6 @@ body.dark-mode .checkout-page {
   margin-top: 0;
 }
 
-/* Dark mode */
 body.dark-mode .cart-page .cart-item {
   background: #1f1f1f;
   border-color: #383838;
@@ -2595,7 +2607,6 @@ body.dark-mode .cart-page .cart-summary {
   color: #f5f5f5;
 }
 
-/* Mobile layout */
 @media (max-width: 600px) {
   .cart-page .cart-item {
     gap: 14px;
@@ -2630,7 +2641,6 @@ body.dark-mode .cart-page .cart-summary {
   }
 }
 
-/* Fix Chrome autofill colours on Checkout - both themes */
 .checkout-form input:-webkit-autofill,
 .checkout-form input:-webkit-autofill:hover,
 .checkout-form input:-webkit-autofill:focus,
@@ -2642,7 +2652,6 @@ body.dark-mode .cart-page .cart-summary {
   transition: background-color 9999s ease-in-out 0s;
 }
 
-/* Dark theme autofill */
 body.dark-mode .checkout-form input:-webkit-autofill,
 body.dark-mode .checkout-form input:-webkit-autofill:hover,
 body.dark-mode .checkout-form input:-webkit-autofill:focus,
@@ -2653,7 +2662,6 @@ body.dark-mode .checkout-form input:-webkit-autofill:active {
   box-shadow: 0 0 0 1000px #2a2a2a inset !important;
 }
 
-/* Keep normal input colours consistent */
 body.dark-mode .checkout-form input {
   background-color: #2a2a2a;
   color: #f5f5f5;
@@ -2711,7 +2719,6 @@ body:not(.dark-mode) .checkout-form input {
   border-color: #000;
 }
 
-/* SHOPPING.CO logo visibility in dark mode */
 body.dark-mode .shop-logo {
   color: #ffffff;
 }
@@ -2722,7 +2729,6 @@ body.dark-mode .shop-logo-avatar {
   padding: 3px;
 }
 
-/* Footer social icons in dark mode */
 body.dark-mode .footer-socials a {
   color: #ffffff;
   background: #222222;
@@ -2733,4 +2739,857 @@ body.dark-mode .footer-socials a:hover {
   color: #000000;
   background: #ffffff;
   border-color: #ffffff;
+}
+
+/* =========================================================
+   SHOPPING.CO RESPONSIVE REPAIR OVERRIDES
+   These rules intentionally come last to override older CSS.
+   ========================================================= */
+/* Keep page scrolling enabled and prevent horizontal overflow. */
+html {
+  min-height: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* Stable navbar alignment in both light and dark themes. */
+.shop-navbar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.shop-navbar-inner {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.shop-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.shop-logo-avatar {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.shop-navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-left: auto;
+}
+
+.shop-search {
+  flex: 0 1 310px;
+  min-width: 0;
+}
+
+.shop-search input {
+  min-width: 0;
+}
+
+.theme-toggle,
+.shop-nav-icon {
+  flex: 0 0 auto;
+}
+
+/* Product cards must be allowed to grow vertically; do not clip ratings. */
+.product-card,
+.product-card>* {
+  min-width: 0;
+}
+
+.product-card {
+  height: auto;
+  overflow: visible;
+}
+
+.product-rating {
+  max-width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.product-rating .stars {
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.product-rating .rating-value {
+  white-space: nowrap;
+}
+
+.product-card h3 {
+  overflow-wrap: anywhere;
+}
+
+.product-card p {
+  line-height: 1.35;
+}
+
+/* Product details and purchase actions must not be clipped. */
+.product-details {
+  min-width: 0;
+  align-items: start;
+}
+
+.product-details-info {
+  min-width: 0;
+  overflow: visible;
+}
+
+.product-details-info button,
+.product-details-info a,
+.product-details-info input,
+.product-details-info select {
+  max-width: 100%;
+}
+
+.product-details-info button {
+  min-height: 44px;
+}
+
+.product-details-info .add-to-cart,
+.product-details-info .add-cart,
+.product-details-info button[type="submit"] {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Admin and overview screens: permit normal document scrolling. */
+.admin-page,
+.admin-dashboard,
+.admin-layout,
+.admin-content,
+.admin-main,
+.admin-container,
+.store-overview,
+.store-overview-page,
+.dashboard-page,
+.dashboard-content {
+  min-height: 0;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+.admin-page button,
+.admin-dashboard button,
+.admin-content button,
+.store-overview button,
+.dashboard-page button {
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* Authentication forms and password controls */
+.auth-page {
+  min-height: calc(100vh - 102px);
+  height: auto;
+  overflow: visible;
+}
+
+.auth-form {
+  min-width: 0;
+  overflow: visible;
+}
+
+.auth-form input[type="password"],
+.auth-form input[type="text"],
+.auth-form input[type="email"] {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Password input wrapper */
+.password-field,
+.password-input-wrapper,
+.password-wrapper,
+.password-input-container,
+.input-password-wrapper,
+.auth-form>div:has(input[name="password"]) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 15px;
+}
+
+/* Password input */
+.password-field input,
+.password-input-wrapper input,
+.password-wrapper input,
+.password-input-container input,
+.input-password-wrapper input,
+.auth-form>div:has(input[name="password"]) input[name="password"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding-right: 52px;
+  margin-bottom: 0;
+}
+
+/* Eye icon button */
+.password-field button,
+.password-input-wrapper button,
+.password-wrapper button,
+.password-input-container button,
+.input-password-wrapper button,
+.auth-form>div:has(input[name="password"]) button[type="button"] {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-width: 36px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #777;
+  box-shadow: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Home hero: reduce excessive blank space and keep the image proportional. */
+.home-hero {
+  min-width: 0;
+}
+
+.home-hero-content,
+.home-hero-image {
+  min-width: 0;
+}
+
+.home-hero-image img {
+  object-position: center;
+}
+
+/* Tablet and mobile layout repairs. */
+@media (max-width: 1050px) {
+  .shop-navbar-inner {
+    gap: 18px;
+  }
+
+  .shop-nav-links {
+    gap: 14px;
+  }
+
+  .shop-search {
+    flex-basis: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-navbar-inner {
+    min-height: 72px;
+    padding: 10px 14px;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .shop-mobile-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+  }
+
+  .shop-logo {
+    font-size: clamp(17px, 4.2vw, 24px);
+    letter-spacing: -0.7px;
+    gap: 5px;
+    min-width: 0;
+  }
+
+  .shop-logo-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .shop-nav-links {
+    display: none;
+  }
+
+  .shop-navbar-right {
+    flex: 0 0 auto;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .shop-search {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    background: transparent;
+  }
+
+  .shop-search input {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    order: initial;
+  }
+
+  .shop-nav-icon {
+    width: 24px;
+    height: 28px;
+  }
+
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .home-hero-content {
+    padding: 34px 20px 26px;
+  }
+
+  .home-hero-content h1 {
+    max-width: 100%;
+    font-size: clamp(34px, 8.5vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -1.2px;
+    margin-bottom: 18px;
+  }
+
+  .home-hero-content p {
+    max-width: 100%;
+  }
+
+  .home-hero-image {
+    width: 100%;
+    height: clamp(280px, 85vw, 430px);
+    min-height: 0;
+  }
+
+  .home-hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  .home-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+  }
+
+  .product-image {
+    height: clamp(155px, 48vw, 230px);
+    margin-bottom: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .product-rating {
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .product-rating .stars {
+    font-size: 12px;
+  }
+
+  .product-rating .rating-value {
+    font-size: 11px;
+  }
+
+  .product-card p {
+    font-size: 16px;
+  }
+
+  .product-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 30px 18px 60px;
+  }
+
+  .product-details-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-height: 480px;
+  }
+
+  .product-details-image img {
+    height: 100%;
+  }
+
+  .product-details-info h1 {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+
+  .auth-page {
+    min-height: calc(100vh - 72px);
+    padding: 28px 14px;
+    align-items: flex-start;
+  }
+
+  .auth-form {
+    max-width: 100%;
+    padding: 26px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .shop-navbar-inner {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 7px;
+  }
+
+  .shop-logo {
+    font-size: 16px;
+  }
+
+  .shop-logo-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .shop-navbar-right {
+    gap: 5px;
+  }
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .shop-search {
+    flex-basis: 30px;
+    width: 30px;
+  }
+
+  .home-products-grid {
+    gap: 14px 10px;
+  }
+}
+
+/* SHOPPING.CO — Final responsive layout fixes */
+
+/* Prevent content from being hidden behind the newsletter */
+.footer {
+  position: relative;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 30px;
+    overflow: visible;
+  }
+
+  .newsletter {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: calc(100% - 30px);
+    max-width: 100%;
+    margin: 0 auto 30px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+
+  .newsletter h2 {
+    font-size: clamp(20px, 5.5vw, 24px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Shop page: remove conflicting negative margins */
+.shop-page {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+  box-sizing: border-box;
+}
+
+.shop-content {
+  margin-top: 0;
+  min-width: 0;
+}
+
+.shop-products,
+.shop-products .products {
+  min-width: 0;
+}
+
+.shop-products .products {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-card {
+  min-width: 0;
+  height: auto;
+  overflow: visible;
+}
+
+.product-card h3 {
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.product-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  line-height: 1.4;
+}
+
+.product-rating .stars,
+.product-rating .rating-value {
+  white-space: nowrap;
+}
+
+/* Product details: keep the size selector and cart button visible */
+.product-details {
+  min-width: 0;
+  align-items: start;
+}
+
+.product-details-info {
+  min-width: 0;
+  overflow: visible;
+}
+
+.add-cart-button {
+  min-height: 48px;
+  margin-bottom: 10px;
+}
+
+/* Home hero: remove unnecessary minimum height */
+.home-hero {
+  min-height: 0;
+}
+
+.home-hero-content {
+  min-width: 0;
+}
+
+.home-hero-image {
+  min-width: 0;
+  min-height: 0;
+}
+
+.home-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+@media (min-width: 769px) {
+  .home-hero-image {
+    height: clamp(520px, 48vw, 700px);
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-page {
+    padding: 20px 15px 60px;
+  }
+
+  .shop-header {
+    margin-bottom: 20px;
+  }
+
+  .shop-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .filters {
+    position: static;
+    margin-bottom: 0;
+  }
+
+  .shop-products .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+
+  .shop-products .product-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 15px 50px;
+  }
+
+  .product-details-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-height: 480px;
+  }
+
+  .product-details-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-details-info {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .product-option {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .sizes {
+    gap: 8px;
+  }
+
+  .sizes button {
+    padding: 10px 16px;
+  }
+
+  .home-hero-content {
+    padding: 28px 20px 24px;
+  }
+
+  .home-hero-content h1 {
+    margin-bottom: 16px;
+  }
+
+  .home-hero-content p {
+    margin-bottom: 20px;
+  }
+
+  .home-stats {
+    margin-top: 22px;
+  }
+
+  .home-hero-image {
+    height: auto;
+  }
+
+  .home-hero-image img {
+    height: auto;
+    max-height: 430px;
+    object-position: center top;
+  }
+}
+
+@media (max-width: 380px) {
+  .shop-products .products {
+    gap: 20px 10px;
+  }
+
+  .product-card h3 {
+    font-size: 12px;
+  }
+
+  .product-rating .stars {
+    font-size: 11px;
+  }
+}
+
+/* Mobile menu visibility in light and dark modes */
+.shop-mobile-menu {
+  color: #111;
+  flex-shrink: 0;
+  width: 28px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-mobile-menu::after {
+  color: inherit;
+  line-height: 1;
+}
+
+body.dark-mode .shop-mobile-menu {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+/* Professional password visibility toggle */
+.auth-form .password-field button,
+.auth-form .password-input-wrapper button,
+.auth-form .password-wrapper button,
+.auth-form .password-input-container button,
+.auth-form .input-password-wrapper button {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.auth-form .password-field button:hover,
+.auth-form .password-input-wrapper button:hover,
+.auth-form .password-wrapper button:hover,
+.auth-form .password-input-container button:hover,
+.auth-form .input-password-wrapper button:hover {
+  background: #f0f0f0;
+  opacity: 1;
+}
+
+.admin-login-card form>div {
+  position: relative;
+  width: 100%;
+}
+
+.admin-login-card form>div input {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 52px;
+}
+
+.admin-login-card form>div button[type="button"] {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #777;
+  box-shadow: none;
+}
+
+/* Professional password visibility toggle */
+.auth-form .password-field button,
+.auth-form .password-input-wrapper button,
+.auth-form .password-wrapper button,
+.auth-form .password-input-container button,
+.auth-form .input-password-wrapper button {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.auth-form .password-field button:hover,
+.auth-form .password-input-wrapper button:hover,
+.auth-form .password-wrapper button:hover,
+.auth-form .password-input-container button:hover,
+.auth-form .input-password-wrapper button:hover {
+  background: #f0f0f0;
+  opacity: 1;
+}
+
+.admin-login-card form>div {
+  position: relative;
+  width: 100%;
+}
+
+.admin-login-card form>div input {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 52px;
+}
+
+
+.admin-login-card form>div button[type="button"] {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-width: 36px;
+  height: 52px;
+  min-height: 52px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #777;
+  box-shadow: none;
+  cursor: pointer;
+  z-index: 2;
 }
